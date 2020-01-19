@@ -21,6 +21,17 @@
         </div>
       </div>
     </div>
+    <div id="regionSelect">
+      <h5>Shop by Region</h5>
+      <div id="regionList" class="row">
+        <div v-for="item in regions" v-bind:key="item.name" class="selectionOption col-3">
+          <div class="regionImageWrapper">
+            <img :src="item.image" alt="item.Name" width="200"/>
+          </div>
+          <div class="regionCaption">{{item.name}}</div>
+        </div>
+      </div>
+    </div>
     <div id="allSelect">
       <p>If you just want to browse then you can use the link below to see our full collection:</p>
       <p><router-link to="/fullrange">See the full collection</router-link></p>
@@ -52,7 +63,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 export default {
   name: 'home',
   data () {
@@ -71,6 +82,9 @@ export default {
     ...mapGetters([
       'winesCount',
       'getAllReds'
+    ]),
+    ...mapState([
+      'regions'
     ])
   },
   methods: {

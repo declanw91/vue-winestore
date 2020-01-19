@@ -5,5 +5,11 @@ export default {
   redWines,
   whiteWines,
   roseWines,
-  wines: [...redWines, ...whiteWines, ...roseWines]
+  wines: [...redWines, ...whiteWines, ...roseWines],
+  regions: [
+    { name: 'Alsace', image: '../images/Alsace.png' },
+    { name: 'Rhone', image: '../images/Rhone.png' },
+    { name: 'Bordeaux', image: '../images/Bordeaux.png' },
+    { name: 'Burgundy', image: '../images/Burgundy.png' }
+  ]
 }
