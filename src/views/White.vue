@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import whites from '../data/white'
+import { mapState } from 'vuex'
 export default {
-  data () {
-    return {
-      whites
-    }
+  computed: {
+    ...mapState(
+      ['whites']
+    )
   }
 }
 </script>

@@ -30,7 +30,7 @@ const routes = [
     component: Rose
   },
   {
-    path: '/wine',
+    path: '/wines/:id',
     name: 'wine',
     component: Wine
   }
