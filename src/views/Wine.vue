@@ -7,7 +7,7 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState(
-      ['whites', 'reds']
+      ['whiteWines', 'redWines']
     )
   },
   methods: {

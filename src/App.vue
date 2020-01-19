@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/red">Red</router-link> |
       <router-link to="/white">White</router-link> |
-      <router-link to="/rose">Rose</router-link>
+      <router-link to="/rose">Rose</router-link> |
+      <router-link to="/fullrange">Full Wine Range</router-link>
     </div>
     <b-container>
       <router-view/>

@@ -1,7 +1,9 @@
-import reds from '../data/red'
-import whites from '../data/white'
+import redWines from '../data/red'
+import whiteWines from '../data/white'
+import roseWines from '../data/rose'
 export default {
-  reds,
-  whites,
-  wines: [...reds, ...whites]
+  redWines,
+  whiteWines,
+  roseWines,
+  wines: [...redWines, ...whiteWines, ...roseWines]
 }

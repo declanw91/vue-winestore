@@ -1,6 +1,6 @@
 export default {
   winesCount: function (state) {
-    return state.reds.length + state.whites.length
+    return state.redWines.length + state.whiteWines.length + state.roseWines.length
   },
   getAllReds: function (state) {
     return state.wines.filter(function (item) {

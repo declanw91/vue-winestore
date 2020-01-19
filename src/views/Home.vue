@@ -1,9 +1,31 @@
 <template>
   <div class="home">
     <h1>Wine Store</h1>
-    <button class="btn btn-primary" @click="toggleWineForm">Add new Wine</button>
-    {{ winesCount }}
-    {{ getAllReds.length }}
+    <div id="welcomeMessage">
+      Our selection contains {{ winesCount }} wines from across many different regions.
+    </div>
+    <div id="colourSelect">
+      <h5>Shop by Colour</h5>
+      <div id="colourList" class="row">
+        <div class="colourOption selectionOption col-4">
+          <img src="/images/redWine.png" alt="Red Wine" height="150"/>
+          <div class="colourCaption">Red</div>
+        </div>
+        <div class="colourOption selectionOption col-4">
+          <img src="/images/whiteWine.png" alt="White Wine" height="150"/>
+          <div class="colourCaption">White</div>
+        </div>
+        <div class="colourOption selectionOption col-4">
+          <img src="/images/roseWine.png" alt="Rose Wine" height="150"/>
+          <div class="colourCaption">Rose</div>
+        </div>
+      </div>
+    </div>
+    <div id="allSelect">
+      <p>If you just want to browse then you can use the link below to see our full collection:</p>
+      <p><router-link to="/fullrange">See the full collection</router-link></p>
+    </div>
+    <button class="btn btn-primary" @click="toggleWineForm" style="display: none">Add new Wine</button>
     <b-form @submit.prevent="handleSubmit" v-if="showWineForm">
       <b-form-group id="input-group-2" label="Wine Name:" label-for="input-2">
         <b-form-input

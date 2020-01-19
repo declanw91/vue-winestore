@@ -5,6 +5,7 @@ import Red from '../views/Red.vue'
 import White from '../views/White.vue'
 import Rose from '../views/Rose.vue'
 import Wine from '../views/Wine.vue'
+import FullRange from '../views/FullRange'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/wines/:id',
     name: 'wine',
     component: Wine
+  },
+  {
+    path: '/fullrange',
+    name: 'fullRange',
+    component: FullRange
   }
 ]
 
