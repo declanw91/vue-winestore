@@ -1,27 +1,33 @@
 <template>
   <div class="home">
-    <h1>Wine Store</h1>
     <div id="welcomeMessage">
-      Our selection contains {{ winesCount }} wines from across many different regions.
+      <p>Our selection contains {{ winesCount }} wines from across many different regions.</p>
+      <p>Use the options below to browse by colour, region or if you want to see our full range use the link at the bottom to see our full set of options</p>
     </div>
-    <div id="colourSelect">
+    <div id="colourSelect" class="mb-3 p-1">
       <h5>Shop by Colour</h5>
       <div id="colourList" class="row">
         <div class="colourOption selectionOption col-4">
-          <img src="/images/redWine.png" alt="Red Wine" height="150"/>
-          <div class="colourCaption">Red</div>
+          <router-link to="/red">
+            <img src="/images/redWine.png" alt="Red Wine" height="150"/>
+            <div class="colourCaption">Red</div>
+          </router-link>
         </div>
         <div class="colourOption selectionOption col-4">
-          <img src="/images/whiteWine.png" alt="White Wine" height="150"/>
-          <div class="colourCaption">White</div>
+          <router-link to="/white">
+            <img src="/images/whiteWine.png" alt="White Wine" height="150"/>
+            <div class="colourCaption">White</div>
+          </router-link>
         </div>
         <div class="colourOption selectionOption col-4">
-          <img src="/images/roseWine.png" alt="Rose Wine" height="150"/>
-          <div class="colourCaption">Rose</div>
+          <router-link to="/rose">
+            <img src="/images/roseWine.png" alt="Rose Wine" height="150"/>
+            <div class="colourCaption">Rose</div>
+          </router-link>
         </div>
       </div>
     </div>
-    <div id="regionSelect">
+    <div id="regionSelect" class="mb-3 p-1">
       <h5>Shop by Region</h5>
       <div id="regionList" class="row">
         <div v-for="item in regions" v-bind:key="item.name" class="selectionOption col-3">

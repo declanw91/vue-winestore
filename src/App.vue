@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/red">Red</router-link> |
-      <router-link to="/white">White</router-link> |
-      <router-link to="/rose">Rose</router-link> |
-      <router-link to="/fullrange">Full Wine Range</router-link>
+    <div id="nav" class="row">
+      <div id="logo" class="col-2">
+        Shalom Wines
+      </div>
+      <div id="navLinks" class="col-8">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/red">Red</router-link> |
+        <router-link to="/white">White</router-link> |
+        <router-link to="/rose">Rose</router-link> |
+        <router-link to="/fullrange">Full Wine Range</router-link>
+      </div>
     </div>
     <b-container>
       <router-view/>
