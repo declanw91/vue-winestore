@@ -2,6 +2,8 @@
   <div class="home">
     <h1>Wine Store</h1>
     <button class="btn btn-primary" @click="toggleWineForm">Add new Wine</button>
+    {{ winesCount }}
+    {{ getAllReds.length }}
     <b-form @submit.prevent="handleSubmit" v-if="showWineForm">
       <b-form-group id="input-group-2" label="Wine Name:" label-for="input-2">
         <b-form-input
@@ -28,7 +30,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'home',
   data () {
@@ -42,6 +44,12 @@ export default {
         year: 'test'
       }
     }
+  },
+  computed: {
+    ...mapGetters([
+      'winesCount',
+      'getAllReds'
+    ])
   },
   methods: {
     ...mapActions([
@@ -60,6 +68,13 @@ export default {
         }
       }
       this.addWine(payload)
+      this.formData = {
+        name: '',
+        colour: '',
+        region: 'test',
+        price: '0.00',
+        year: 'test'
+      }
     }
   }
 }
