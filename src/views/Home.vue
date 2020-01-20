@@ -44,12 +44,12 @@
       <p>If you just want to browse then you can use the link below to see our full collection:</p>
       <p><router-link to="/fullrange">See the full collection</router-link></p>
     </div>
-    <button class="btn btn-primary" @click="toggleWineForm" style="display: none">Add new Wine</button>
+    <button class="btn btn-primary" @click="toggleWineForm" syle="display: none">Add new Wine</button>
     <b-form @submit.prevent="handleSubmit" v-if="showWineForm">
       <b-form-group id="input-group-2" label="Wine Name:" label-for="input-2">
         <b-form-input
           id="input-2"
-          v-model="formData.name"
+          v-model="formData.Name"
           required
           placeholder="Enter name"
         ></b-form-input>
@@ -58,9 +58,39 @@
       <b-form-group id="input-group-3" label="Wine Colour:" label-for="input-3">
         <b-form-input
           id="input-3"
-          v-model="formData.colour"
+          v-model="formData.Colour"
           required
           placeholder="Enter colour"
+        ></b-form-input>
+      </b-form-group>
+
+      <b-form-group id="input-group-4" label="Region:" label-for="input-4">
+        <b-form-select
+          id="input-4"
+          v-model="formData.Region"
+          required
+        >
+          <b-form-select-option v-for="item in regions" :value="item.name" v-bind:key="item.name">{{ item.name }}</b-form-select-option>
+        </b-form-select>
+      </b-form-group>
+
+      <b-form-group id="input-group-5" label="Year:" label-for="input-5">
+        <b-form-input
+          id="input-5"
+          v-model="formData.Year"
+          required
+          placeholder="Enter year"
+          type="number"
+        ></b-form-input>
+      </b-form-group>
+
+      <b-form-group id="input-group-6" label="Price:" label-for="input-6">
+        <b-form-input
+          id="input-6"
+          v-model="formData.Price"
+          required
+          placeholder="Enter price"
+          type="number"
         ></b-form-input>
       </b-form-group>
 
@@ -78,11 +108,11 @@ export default {
     return {
       showWineForm: false,
       formData: {
-        name: '',
-        colour: '',
-        region: 'test',
-        price: '0.00',
-        year: 'test'
+        Name: '',
+        Colour: '',
+        Region: 'test',
+        Price: '0.00',
+        Year: 'test'
       }
     }
   },
