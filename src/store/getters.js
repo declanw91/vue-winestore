@@ -6,5 +6,10 @@ export default {
     return state.wines.filter(function (item) {
       return item.Colour === 'Red'
     })
+  },
+  getRegionalWine: function (state) {
+    return state.wines.filter(function (item) {
+      return item.Region === ''
+    })
   }
 }

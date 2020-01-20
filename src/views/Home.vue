@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div id="welcomeMessage">
+    <div id="welcomeMessage" class="mb-3 p-1">
       <p>Our selection contains {{ winesCount }} wines from across many different regions.</p>
       <p>Use the options below to browse by colour, region or if you want to see our full range use the link at the bottom to see our full set of options</p>
     </div>
@@ -32,13 +32,15 @@
       <div id="regionList" class="row">
         <div v-for="item in regions" v-bind:key="item.name" class="selectionOption col-3">
           <div class="regionImageWrapper">
-            <img :src="item.image" alt="item.Name" width="200"/>
+            <router-link :to="'/wines/'+item.name">
+              <img :src="item.image" :alt="item.name" width="200"/>
+            </router-link>
           </div>
           <div class="regionCaption">{{item.name}}</div>
         </div>
       </div>
     </div>
-    <div id="allSelect">
+    <div id="allSelect" class="mb-3 p-1">
       <p>If you just want to browse then you can use the link below to see our full collection:</p>
       <p><router-link to="/fullrange">See the full collection</router-link></p>
     </div>

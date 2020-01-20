@@ -31,7 +31,7 @@ const routes = [
     component: Rose
   },
   {
-    path: '/wines/:id',
+    path: '/wines/:region',
     name: 'wine',
     component: Wine
   },
