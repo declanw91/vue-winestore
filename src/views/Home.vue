@@ -5,7 +5,7 @@
       <p>Use the options below to browse by colour, region or if you want to see our full range use the link at the bottom to see our full set of options</p>
     </div>
     <div id="colourSelect" class="mb-3 p-1">
-      <h5>Shop by Colour</h5>
+      <h5 class="mb-4">Shop by Colour</h5>
       <div id="colourList" class="row">
         <div class="colourOption selectionOption col-4">
           <router-link to="/red">
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div id="regionSelect" class="mb-3 p-1">
-      <h5>Shop by Region</h5>
+      <h5 class="mb-4">Shop by Region</h5>
       <div id="regionList" class="row">
         <div v-for="item in regions" v-bind:key="item.name" class="selectionOption col-3">
           <div class="regionImageWrapper">

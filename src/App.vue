@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav" class="row">
       <div id="logo" class="col-2">
-        <p>Shalom Wines</p>
+        <img src="/images/wineLogo.png" alt="logo" width="80"/>
+        <span>Shalom Wines</span>
       </div>
       <div id="navLinks" class="col-8">
         <router-link to="/">Home</router-link> |
@@ -28,8 +29,8 @@
 }
 
 #nav {
-  padding: 30px;
-  background-color: #343a40;
+  padding: 10px;
+  background-color: #a6a6a6;
 }
 
 #nav a {
@@ -43,5 +44,9 @@
 
 #logo {
   color: #FFFFFF;
+}
+
+#navLinks {
+  padding-top: 20px;
 }
 </style>
