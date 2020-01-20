@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav" class="row">
       <div id="logo" class="col-2">
-        Shalom Wines
+        <p>Shalom Wines</p>
       </div>
       <div id="navLinks" class="col-8">
         <router-link to="/">Home</router-link> |
@@ -12,7 +12,7 @@
         <router-link to="/fullrange">Full Wine Range</router-link>
       </div>
     </div>
-    <b-container>
+    <b-container id="pageWrapper" class="pt-2">
       <router-view/>
     </b-container>
   </div>
@@ -29,14 +29,19 @@
 
 #nav {
   padding: 30px;
+  background-color: #343a40;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #FFFFFF;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #FFFFFF;
+}
+
+#logo {
+  color: #FFFFFF;
 }
 </style>

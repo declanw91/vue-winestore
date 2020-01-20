@@ -1,7 +1,10 @@
 <template>
     <div>
       <h1>Wines from {{ region }}</h1>
-      <b-table striped hover :items="regionWines">
+      <b-table striped hover :items="regionWines" :fields="fields">
+        <template v-slot:cell(Price)="data">
+            &pound;{{ data.value }}
+          </template>
         </b-table>
     </div>
 </template>
@@ -12,7 +15,8 @@ export default {
   data () {
     return {
       regionWines: [],
-      region: ''
+      region: '',
+      fields: ['Name', 'Colour', 'Region', 'Price', 'Year']
     }
   },
   computed: {
