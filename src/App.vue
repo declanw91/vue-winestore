@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav" class="row">
       <div id="logo" class="col-2">
-        <img src="/images/wineLogo.png" alt="logo" width="80"/>
+        <img src="/images/wineLogo.png" alt="logo" width="50"/>
         <span>Shalom Wines</span>
       </div>
       <div id="navLinks" class="col-8">
@@ -20,6 +20,10 @@
 </template>
 
 <style>
+body {
+  background-image: linear-gradient(45deg, #cccccc 25%, #dbdbdb 25%, #dbdbdb 50%, #cccccc 50%, #cccccc 75%, #dbdbdb 75%, #dbdbdb 100%);
+  background-size: 28.28px 28.28px;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -47,6 +51,10 @@
 }
 
 #navLinks {
-  padding-top: 20px;
+  padding-top: 10px;
+}
+
+table {
+  background: #ffffff;
 }
 </style>

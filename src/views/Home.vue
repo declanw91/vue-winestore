@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div id="welcomeMessage" class="mb-3 p-1">
+      <h1>Welcome to Shalom Wines</h1>
       <p>Our selection contains {{ winesCount }} wines from across many different regions.</p>
       <p>Use the options below to browse by colour, region or if you want to see our full range use the link at the bottom to see our full set of options</p>
     </div>
@@ -44,7 +45,6 @@
       <p>If you just want to browse then you can use the link below to see our full collection:</p>
       <p><router-link to="/fullrange">See the full collection</router-link></p>
     </div>
-    <button class="btn btn-primary" @click="toggleWineForm" syle="display: none">Add new Wine</button>
     <b-form @submit.prevent="handleSubmit" v-if="showWineForm">
       <b-form-group id="input-group-2" label="Wine Name:" label-for="input-2">
         <b-form-input
@@ -56,12 +56,13 @@
       </b-form-group>
 
       <b-form-group id="input-group-3" label="Wine Colour:" label-for="input-3">
-        <b-form-input
-          id="input-3"
+        <b-form-select
+          id="input-4"
           v-model="formData.Colour"
           required
-          placeholder="Enter colour"
-        ></b-form-input>
+        >
+          <b-form-select-option v-for="item in colours" :value="item.name" v-bind:key="item.name">{{ item.name }}</b-form-select-option>
+        </b-form-select>
       </b-form-group>
 
       <b-form-group id="input-group-4" label="Region:" label-for="input-4">
@@ -91,6 +92,7 @@
           required
           placeholder="Enter price"
           type="number"
+          step="0.01"
         ></b-form-input>
       </b-form-group>
 
@@ -122,7 +124,8 @@ export default {
       'getAllReds'
     ]),
     ...mapState([
-      'regions'
+      'regions',
+      'colours'
     ])
   },
   methods: {
@@ -134,13 +137,14 @@ export default {
     },
     handleSubmit: function () {
       // implement submit
-      const { name, colour } = this.formData
-      const payload = { colour,
+      const { Name, Colour } = this.formData
+      const payload = { Colour,
         wine: {
-          name,
-          colour
+          Name,
+          Colour
         }
       }
+      console.log(payload)
       this.addWine(payload)
       this.formData = {
         name: '',
@@ -153,3 +157,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #colourSelect, #regionSelect, #allSelect, #welcomeMessage {
+    border: 1px solid #000000;
+    background: #FFFFFF;
+  }
+</style>

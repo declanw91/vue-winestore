@@ -11,5 +11,10 @@ export default {
     { name: 'Rhone', image: '../images/Rhone.png' },
     { name: 'Bordeaux', image: '../images/Bordeaux.png' },
     { name: 'Burgundy', image: '../images/Burgundy.png' }
+  ],
+  colours: [
+    { name: 'Red' },
+    { name: 'White' },
+    { name: 'Rose' }
   ]
 }

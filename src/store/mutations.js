@@ -1,5 +1,6 @@
 export default {
-  appendWine: function (state, { colour, wine }) {
-    state[colour].push(wine)
+  appendWine: function (state, { Colour, wine }) {
+    const wineList = Colour.toLowerCase() + 'Wines'
+    state[wineList].push(wine)
   }
 }
