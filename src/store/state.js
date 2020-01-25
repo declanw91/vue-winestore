@@ -18,5 +18,7 @@ export default {
     { name: 'Rose' }
   ],
   cartTotal: 0.00,
-  cartCount: 0
+  cartCount: 0,
+  selectedQuantity: 0,
+  selectedId: -1
 }

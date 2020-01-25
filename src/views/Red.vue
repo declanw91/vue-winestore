@@ -6,7 +6,7 @@
             &pound;{{ data.value }}
           </template>
           <template v-slot:cell(Id)="data">
-            <b-icon icon="plus" @click="addWineToCart(data.value)"></b-icon>
+            <b-icon icon="plus" v-b-modal.cartModal :data-id="data.value"></b-icon>
           </template>
           <template v-slot:head(Id)="data">
             <span class="text-info" :data-name="data.value"> </span>

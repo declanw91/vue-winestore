@@ -4,5 +4,11 @@ export default {
   },
   addToCart: function ({ commit }, payload) {
     commit('addToCart', payload)
+  },
+  updateSelectedQuantity: function ({ commit }, payload) {
+    commit('updateSelectedQuantity', payload)
+  },
+  updateSelectedId: function ({ commit }, payload) {
+    commit('updateSelectedId', payload)
   }
 }

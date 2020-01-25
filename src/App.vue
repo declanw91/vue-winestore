@@ -19,16 +19,39 @@
     <b-container id="pageWrapper" class="pt-2">
       <router-view/>
     </b-container>
+    <b-modal id="cartModal" title="Add to Cart" @ok="addWineToCart">
+      <b-form>
+      <b-form-group id="input-group-2" label="Quantity:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="selectedWineQuantity"
+          required
+          placeholder="Enter quantity"
+          type="number"
+          min="0"
+        ></b-form-input>
+      </b-form-group>
+      <b-button type="submit" variant="primary">Add</b-button>
+    </b-form>
+    </b-modal>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 export default {
+  data () {
+    return {
+      selectedWineQuantity: 0
+    }
+  },
   computed: {
     ...mapState(
       ['cartTotal', 'cartCount']
     )
+  },
+  methods: {
+    addWineToCart: function () {}
   }
 }
 </script>
