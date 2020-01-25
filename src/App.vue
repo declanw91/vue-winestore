@@ -12,12 +12,26 @@
         <router-link to="/rose">Rose</router-link> |
         <router-link to="/fullrange">Full Wine Range</router-link>
       </div>
+      <div id="cartTotals" class="col-2">
+        <span class="text-white">{{ cartCount }} Item(s) (&pound;{{ cartTotal }})</span>
+      </div>
     </div>
     <b-container id="pageWrapper" class="pt-2">
       <router-view/>
     </b-container>
   </div>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState(
+      ['cartTotal', 'cartCount']
+    )
+  }
+}
+</script>
 
 <style>
 body {
@@ -50,7 +64,7 @@ body {
   color: #FFFFFF;
 }
 
-#navLinks {
+#navLinks, #cartTotals {
   padding-top: 10px;
 }
 

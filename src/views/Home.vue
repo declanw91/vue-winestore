@@ -144,7 +144,6 @@ export default {
           Colour
         }
       }
-      console.log(payload)
       this.addWine(payload)
       this.formData = {
         name: '',

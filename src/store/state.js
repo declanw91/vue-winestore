@@ -16,5 +16,7 @@ export default {
     { name: 'Red' },
     { name: 'White' },
     { name: 'Rose' }
-  ]
+  ],
+  cartTotal: 0.00,
+  cartCount: 0
 }
