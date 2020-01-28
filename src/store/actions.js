@@ -10,5 +10,8 @@ export default {
   },
   updateSelectedId: function ({ commit }, payload) {
     commit('updateSelectedId', payload)
+  },
+  updateSelectedWine: function ({ commit }, payload) {
+    commit('updateSelectedWine', payload)
   }
 }

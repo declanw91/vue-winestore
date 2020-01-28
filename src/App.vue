@@ -31,14 +31,13 @@
           min="0"
         ></b-form-input>
       </b-form-group>
-      <b-button type="submit" variant="primary">Add</b-button>
     </b-form>
     </b-modal>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -47,11 +46,19 @@ export default {
   },
   computed: {
     ...mapState(
-      ['cartTotal', 'cartCount']
+      ['cartTotal', 'cartCount', 'selectedWine', 'selectedQuantity']
     )
   },
   methods: {
-    addWineToCart: function () {}
+    ...mapActions(
+      ['addToCart', 'updateSelectedWine']
+    ),
+    addWineToCart: function () {
+      const winePrice = Number(this.selectedWine.Price)
+      const quanity = Number(this.selectedWineQuantity)
+      const payload = { price: winePrice, quantity: quanity }
+      this.addToCart(payload)
+    }
   }
 }
 </script>

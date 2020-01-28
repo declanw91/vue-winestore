@@ -25,20 +25,21 @@ export default {
   },
   computed: {
     ...mapState(
-      ['whiteWines']
+      ['whiteWines', 'selectedWine']
     )
   },
   methods: {
     ...mapActions(
-      ['addToCart']
+      ['addToCart', 'updateSelectedWine']
     ),
     addWineToCart: function (id) {
       const wine = this.whiteWines.filter(function (item) {
         return item.Id === id
       })
       if (wine.length > 0) {
-        const payload = { quantity: 1, price: wine[0].Price }
-        this.addToCart(payload)
+        const payload = { wine: wine[0] }
+        this.updateSelectedWine(payload)
+        this.$bvModal.show('cartModal')
       }
     }
   }

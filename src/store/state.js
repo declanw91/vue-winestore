@@ -20,5 +20,6 @@ export default {
   cartTotal: 0.00,
   cartCount: 0,
   selectedQuantity: 0,
-  selectedId: -1
+  selectedId: -1,
+  selectedWine: null
 }

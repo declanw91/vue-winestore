@@ -7,12 +7,15 @@ export default {
     const orderPrice = quantity * Number(price)
     const cartTotalPrice = Number(state.cartTotal) + orderPrice
     state.cartTotal = Number(cartTotalPrice).toFixed(2)
-    state.cartCount = state.cartCount + quantity
+    state.cartCount = Number(state.cartCount) + quantity
   },
   updateSelectedQuantity: function (state, { quantity }) {
-    state.selectedQuanaity = Number(quantity)
+    state.selectedQuantity = Number(quantity)
   },
   updateSelectedId: function (state, { id }) {
     state.selectedId = Number(id)
+  },
+  updateSelectedWine: function (state, { wine }) {
+    state.selectedWine = wine
   }
 }
