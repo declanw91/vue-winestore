@@ -11,5 +11,8 @@ export default {
     return state.wines.filter(function (item) {
       return item.Region === ''
     })
+  },
+  getCartItems: function (state) {
+    return state.cartItems
   }
 }

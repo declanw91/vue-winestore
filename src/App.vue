@@ -28,7 +28,7 @@
           required
           placeholder="Enter quantity"
           type="number"
-          min="0"
+          min="1"
         ></b-form-input>
       </b-form-group>
     </b-form>
@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     ...mapState(
-      ['cartTotal', 'cartCount', 'selectedWine', 'selectedQuantity']
+      ['cartTotal', 'cartCount', 'selectedWine', 'selectedQuantity', 'cartItems']
     )
   },
   methods: {
@@ -54,10 +54,10 @@ export default {
       ['addToCart', 'updateSelectedWine']
     ),
     addWineToCart: function () {
-      const winePrice = Number(this.selectedWine.Price)
       const quanity = Number(this.selectedWineQuantity)
-      const payload = { price: winePrice, quantity: quanity }
+      const payload = { item: this.selectedWine, quantity: quanity }
       this.addToCart(payload)
+      this.selectedWineQuantity = 0
     }
   }
 }

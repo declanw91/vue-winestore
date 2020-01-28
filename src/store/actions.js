@@ -13,5 +13,8 @@ export default {
   },
   updateSelectedWine: function ({ commit }, payload) {
     commit('updateSelectedWine', payload)
+  },
+  addToCartItems: function ({ commit }, payload) {
+    commit('addToCartItemsList', payload)
   }
 }

@@ -21,5 +21,6 @@ export default {
   cartCount: 0,
   selectedQuantity: 0,
   selectedId: -1,
-  selectedWine: null
+  selectedWine: null,
+  cartItems: []
 }
