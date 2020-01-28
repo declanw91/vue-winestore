@@ -101,4 +101,11 @@ body {
 table {
   background: #ffffff;
 }
+
+.addToCartWrapper {
+  cursor: pointer;
+  width: 25px;
+  display: inline-block;
+  height: 25px;
+}
 </style>
