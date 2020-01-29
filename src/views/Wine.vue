@@ -6,7 +6,7 @@
             &pound;{{ data.value }}
           </template>
           <template v-slot:cell(Id)="data">
-            <b-icon icon="plus" v-b-modal.cartModal :data-id="data.value"></b-icon>
+            <span class="addToCartWrapper" @click="addWineToCart(data.value)"> <b-icon icon="plus" :data-id="data.value"></b-icon></span>
           </template>
           <template v-slot:head(Id)="data">
             <span class="text-info" :data-name="data.value"> </span>
@@ -32,15 +32,16 @@ export default {
   },
   methods: {
     ...mapActions(
-      ['addToCart']
+      ['addToCart', 'updateSelectedWine']
     ),
     addWineToCart: function (id) {
       const wine = this.redWines.filter(function (item) {
         return item.Id === id
       })
       if (wine.length > 0) {
-        const payload = { quantity: 1, price: wine[0].Price }
-        this.addToCart(payload)
+        const payload = { wine: wine[0] }
+        this.updateSelectedWine(payload)
+        this.$bvModal.show('cartQuantityModal')
       }
     }
   },

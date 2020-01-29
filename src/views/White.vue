@@ -39,7 +39,7 @@ export default {
       if (wine.length > 0) {
         const payload = { wine: wine[0] }
         this.updateSelectedWine(payload)
-        this.$bvModal.show('cartModal')
+        this.$bvModal.show('cartQuantityModal')
       }
     }
   }

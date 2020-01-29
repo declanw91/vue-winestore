@@ -1,25 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav" class="row">
-      <div id="logo" class="col-2">
-        <img src="/images/wineLogo.png" alt="logo" width="50"/>
-        <span>Shalom Wines</span>
-      </div>
-      <div id="navLinks" class="col-8">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/red">Red</router-link> |
-        <router-link to="/white">White</router-link> |
-        <router-link to="/rose">Rose</router-link> |
-        <router-link to="/fullrange">Full Wine Range</router-link>
-      </div>
-      <div id="cartTotals" class="col-2">
-        <span class="text-white">{{ cartCount }} Item(s) (&pound;{{ cartTotal }})</span>
+    <div id="nav">
+      <div class="row">
+        <div id="logo" class="col-2">
+          <img src="/images/wineLogo.png" alt="logo" width="50"/>
+          <span>Shalom Wines</span>
+        </div>
+        <div id="navLinks" class="col-8">
+          <router-link to="/">Home</router-link> |
+          <router-link to="/red">Red</router-link> |
+          <router-link to="/white">White</router-link> |
+          <router-link to="/rose">Rose</router-link> |
+          <router-link to="/fullrange">Full Wine Range</router-link>
+        </div>
+        <div id="cartTotals" class="col-2" v-b-modal.cartDisplayModal>
+          <span class="text-white">{{ cartCount }} Item(s)</span>
+        </div>
       </div>
     </div>
     <b-container id="pageWrapper" class="pt-2">
       <router-view/>
     </b-container>
-    <b-modal id="cartModal" title="Add to Cart" @ok="addWineToCart">
+    <b-modal id="cartQuantityModal" title="Add to Cart" @ok="addWineToCart">
       <b-form>
       <b-form-group id="input-group-2" label="Quantity:" label-for="input-2">
         <b-form-input
@@ -32,6 +34,23 @@
         ></b-form-input>
       </b-form-group>
     </b-form>
+    </b-modal>
+    <b-modal id="cartDisplayModal" title="My Cart" ok-only>
+      <div id="cartItemsWrapper">
+        <h5>Your Cart Items</h5>
+        <div class="cartItemWrapper row" v-for="item in cartItems" v-bind:key="item.Id">
+          <div class="col-2 text-center" >
+            <font-awesome-icon icon="wine-glass-alt" />
+          </div>
+          <div class="col-9">
+            <div class="row">
+              <span class="mr-2 col-9">{{ item.Name }}</span>
+              <span class="mr-2 col-2">&pound;{{ item.Price }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="cartTotal" class="mt-3 text-right"><h5>Cart Total: &pound;{{ cartTotal }}</h5></div>
     </b-modal>
   </div>
 </template>
@@ -107,5 +126,10 @@ table {
   width: 25px;
   display: inline-block;
   height: 25px;
+}
+
+#nav .row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 </style>
