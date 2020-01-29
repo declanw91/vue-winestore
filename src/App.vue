@@ -38,7 +38,7 @@
     <b-modal id="cartDisplayModal" title="My Cart" ok-only>
       <div id="cartItemsWrapper">
         <h5>Your Cart Items</h5>
-        <div class="cartItemWrapper row" v-for="item in cartItems" v-bind:key="item.Id">
+        <div class="cartItemWrapper row" v-for="(item, index) in cartItems" v-bind:key="index">
           <div class="col-2 text-center" >
             <font-awesome-icon icon="wine-glass-alt" />
           </div>
@@ -131,5 +131,9 @@ table {
 #nav .row {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+#cartTotals {
+  cursor: pointer;
 }
 </style>

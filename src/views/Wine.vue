@@ -35,7 +35,7 @@ export default {
       ['addToCart', 'updateSelectedWine']
     ),
     addWineToCart: function (id) {
-      const wine = this.redWines.filter(function (item) {
+      const wine = this.regionWines.filter(function (item) {
         return item.Id === id
       })
       if (wine.length > 0) {
