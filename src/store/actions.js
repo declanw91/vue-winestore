@@ -16,5 +16,8 @@ export default {
   },
   addToCartItems: function ({ commit }, payload) {
     commit('addToCartItemsList', payload)
+  },
+  removeFromCartItems: function ({ commit }, payload) {
+    commit('removeFromCartItems', payload)
   }
 }

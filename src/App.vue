@@ -121,7 +121,7 @@ table {
   margin-right: 0px;
 }
 
-#cartTotals {
+#cartTotals, .removeFromCartIcon {
   cursor: pointer;
 }
 </style>
