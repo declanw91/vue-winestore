@@ -11,32 +11,32 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/VueWineStore',
     name: 'home',
     component: Home
   },
   {
-    path: '/red',
+    path: '/VueWineStore/red',
     name: 'red',
     component: Red
   },
   {
-    path: '/white',
+    path: '/VueWineStore/white',
     name: 'white',
     component: White
   },
   {
-    path: '/rose',
+    path: '/VueWineStore/rose',
     name: 'rose',
     component: Rose
   },
   {
-    path: '/wines/:region',
+    path: '/VueWineStore/wines/:region',
     name: 'wine',
     component: Wine
   },
   {
-    path: '/fullrange',
+    path: '/VueWineStore/fullrange',
     name: 'fullRange',
     component: FullRange
   }
