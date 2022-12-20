@@ -9,19 +9,19 @@
       <h5 class="mb-4">Shop by Colour</h5>
       <div id="colourList" class="row">
         <div class="colourOption selectionOption col-4">
-          <router-link to="/red">
+          <router-link to="/VueWineStore/red">
             <img src="/images/redWine.png" alt="Red Wine" height="150"/>
             <div class="colourCaption">Red</div>
           </router-link>
         </div>
         <div class="colourOption selectionOption col-4">
-          <router-link to="/white">
+          <router-link to="/VueWineStore/white">
             <img src="/images/whiteWine.png" alt="White Wine" height="150"/>
             <div class="colourCaption">White</div>
           </router-link>
         </div>
         <div class="colourOption selectionOption col-4">
-          <router-link to="/rose">
+          <router-link to="/VueWineStore/rose">
             <img src="/images/roseWine.png" alt="Rose Wine" height="150"/>
             <div class="colourCaption">Rose</div>
           </router-link>
@@ -33,7 +33,7 @@
       <div id="regionList" class="row">
         <div v-for="item in regions" v-bind:key="item.name" class="selectionOption col-3">
           <div class="regionImageWrapper">
-            <router-link :to="'/wines/'+item.name">
+            <router-link :to="'/VueWineStore/wines/'+item.name">
               <img :src="item.image" :alt="item.name" width="200"/>
             </router-link>
           </div>
@@ -43,7 +43,7 @@
     </div>
     <div id="allSelect" class="mb-3 p-1">
       <p>If you just want to browse then you can use the link below to see our full collection:</p>
-      <p><router-link to="/fullrange">See the full collection</router-link></p>
+      <p><router-link to="/VueWineStore/fullrange">See the full collection</router-link></p>
     </div>
     <b-form @submit.prevent="handleSubmit" v-if="showWineForm">
       <b-form-group id="input-group-2" label="Wine Name:" label-for="input-2">
