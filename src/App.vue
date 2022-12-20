@@ -7,11 +7,11 @@
           <span>Shalom Wines</span>
         </div>
         <div id="navLinks" class="col-8">
-          <router-link to="/">Home</router-link> |
-          <router-link to="/red">Red</router-link> |
-          <router-link to="/white">White</router-link> |
-          <router-link to="/rose">Rose</router-link> |
-          <router-link to="/fullrange">Full Wine Range</router-link>
+          <router-link to="/VueWineStore">Home</router-link> |
+          <router-link to="/VueWineStore/red">Red</router-link> |
+          <router-link to="/VueWineStore/white">White</router-link> |
+          <router-link to="/VueWineStore/rose">Rose</router-link> |
+          <router-link to="/VueWineStore/fullrange">Full Wine Range</router-link>
         </div>
         <div id="cartTotals" class="col-2" v-b-modal.cartDisplayModal>
           <span class="text-white">{{ cartCount }} Item(s)</span>
